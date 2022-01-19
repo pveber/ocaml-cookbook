@@ -119,13 +119,13 @@ val v : float array = [|1.; 0.; 0.|]
 It is easy to define common operations:
 ```ocaml
 # let norm v =
-    Array.fold v ~init:0. ~f:Float.(fun acc x -> acc + x ** 2.)
+    Base.Array.fold v ~init:0. ~f:(fun acc x -> acc +. x ** 2.)
     |> Float.sqrt
   ;;
 val norm : float array -> float = <fun>
 
 # let dot_product u v =
-    Array.fold2_exn u v ~init:0. ~f:(fun acc x y -> acc +. x *. y)
+    Base.Array.fold2_exn u v ~init:0. ~f:(fun acc x y -> acc +. x *. y)
   ;;
 val dot_product : float array -> float array -> float = <fun>
 ```
@@ -150,7 +150,7 @@ record types
   ;;
 type vec2d = { x : float; y : float; }
 
-# let norm v = Float.(sqrt (v.x ** 2. + v.y ** 2.));;
+# let norm v = Float.sqrt (v.x ** 2. +. v.y ** 2.);;
 val norm : vec2d -> float = <fun>
 ```
 The [gg library](https://github.com/dbuenzli/gg) provides basic
