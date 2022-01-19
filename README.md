@@ -103,6 +103,12 @@ When asking `dune` to compile my code, it will notice that the library
 providing on the command line the path of compiled compilation units
 from `re` along with those from `re.perl`.
 
+More on this:
+
+- https://ocaml.org/learn/tutorials/compiling_ocaml_projects.html
+- https://ocaml.org/manual/comp.html
+- https://ocaml.org/manual/native.html
+
 ### How to represent a vector?
 
 The most immediate approach is to use a `float array`
